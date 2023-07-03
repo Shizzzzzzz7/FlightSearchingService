@@ -1,13 +1,13 @@
 const express = require("express");
 
+const {PORT}= require("./config/serverConfig");
+
 
 const startAndSetupServer= async()=>{
 
     //create the express object
 
     const app=express();
-
-    const PORT= 3000;
 
     app.listen(PORT,()=>{
 
