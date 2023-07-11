@@ -2,7 +2,7 @@ const {City}= require("../models/index");
 
 class CityRepository{
 
-    async create(name){
+    async createCity(name){
         try{
 
             const city = await City.create({name});
@@ -13,7 +13,7 @@ class CityRepository{
         }
     }
 
-    async delete(id){
+    async deleteCity(id){
         try{
 
             await City.destroy({
@@ -22,10 +22,36 @@ class CityRepository{
                 }
             });
             
-
+            return true;
         }catch(err){
             throw {err};
         }
+    }
+
+    async updateCity(id,data){
+        try {
+
+            const result= await City.update(data, {
+                where:{
+                    id:id
+                }
+            });
+
+            return result;
+            
+        } catch (error) {
+
+            throw {error};
+            
+        }
+    }
+
+    async getCity(id){
+        try{const result= await City.findByPk(id);
+        return result;
+    }catch(error){
+        throw {error};
+    }
     }
 }
 
