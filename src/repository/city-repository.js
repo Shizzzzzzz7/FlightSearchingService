@@ -5,7 +5,7 @@ class CityRepository{
     async createCity(name){
         try{
 
-            const city = await City.create({name});
+            const city = await City.create(name);
             return city;
 
         }catch(err){
@@ -46,8 +46,8 @@ class CityRepository{
         }
     }
 
-    async getCity(id){
-        try{const result= await City.findByPk(id);
+    async getCity(cityId){
+        try{const result= await City.findByPk(cityId);
         return result;
     }catch(error){
         throw {error};
