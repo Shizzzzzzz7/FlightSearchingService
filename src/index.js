@@ -5,6 +5,8 @@ const {PORT}= require("./config/serverConfig");
 
 const apiRoute= require("./routes/index");
 
+const { Airport }= require("./models/index");
+
 
 const startAndSetupServer= async()=>{
 
@@ -17,9 +19,13 @@ const startAndSetupServer= async()=>{
 
     app.use('/api', apiRoute);
 
-    app.listen(PORT,()=>{
+    app.listen(PORT,async()=>{
 
         console.log(`Server is running on ${PORT}`);
+
+        const result=await Airport.findAll();
+
+        console.log(result);
     });
 }
 

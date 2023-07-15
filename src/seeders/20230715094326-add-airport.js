@@ -39,12 +39,6 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        name: "	Netaji Subhas Chandra Bose International Airport",
-        cityId: 2,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
         name: "	Indira Gandhi International Airport",
         cityId: 5,
         createdAt: new Date(),
