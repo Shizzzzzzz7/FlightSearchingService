@@ -77,7 +77,7 @@ const get= async(req,res)=>{
     }
 }
 
-//DELETE -> /city/:params
+//DELETE -> /city/:id
 const destroy= async(req,res)=>{
     try {
 
@@ -101,9 +101,33 @@ const destroy= async(req,res)=>{
     }
 }
 
+const getAll= async(req,res)=>{
+    try {
+        const cities= await cityService.getAllCity(req.query);
+        return res.status(201).json({
+            data: cities,
+            success: true,
+            message: "Cities fetched Successfully",
+            err:{}
+        })
+        
+    } catch (error) {
+
+        console.log(error);
+        return res.status(500).json({
+            data: {},
+            success: false,
+            message: "Unable to fetch Cities",
+            err:{error}
+        });
+        
+    }
+}
+
 module.exports={
     create,
     update,
     get,
-    destroy
+    destroy,
+    getAll
 }
