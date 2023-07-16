@@ -5,7 +5,7 @@ const {PORT}= require("./config/serverConfig");
 
 const apiRoute= require("./routes/index");
 
-const { Airport,City }= require("./models/index");
+
 
 
 const startAndSetupServer= async()=>{

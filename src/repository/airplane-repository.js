@@ -5,8 +5,8 @@ class AirplaneRepository{
     async getAirplane(id){
         try {
             
-            const airplane=await Airplane.findByPk(id);
-            return airplane;
+            const plane=await Airplane.findByPk(id);
+            return plane;
 
         } catch (error) {
             throw {error};
