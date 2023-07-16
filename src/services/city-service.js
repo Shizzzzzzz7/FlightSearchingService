@@ -5,10 +5,10 @@ class CityService{
         this.cityRepository= new CityRepository();
     }
 
-    async createCity(name){
+    async createCity(names){
         try {
 
-            const result= await this.cityRepository.createCity(name);
+            const result= await this.cityRepository.createCity(names);
             return result;
             
         } catch (error) {
