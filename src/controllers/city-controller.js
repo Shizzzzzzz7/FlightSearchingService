@@ -15,7 +15,7 @@ const create= async(req,res)=>{
         });
         
     } catch (error) {
-
+        console.log("Error in Controller Layer");
         console.log(error);
         return res.status(500).json({
             data: {},
@@ -40,7 +40,7 @@ const update= async(req,res)=>{
         });
         
     } catch (error) {
-
+        console.log("Error in Controller Layer");
         console.log(error);
         return res.status(500).json({
             data: {},
@@ -65,7 +65,7 @@ const get= async(req,res)=>{
         });
         
     } catch (error) {
-
+        console.log("Error in Controller Layer");
         console.log(error);
         return res.status(500).json({
             data: {},
@@ -90,7 +90,7 @@ const destroy= async(req,res)=>{
         });
         
     } catch (error) {
-        
+        console.log("Error in Controller Layer");
         console.log(error);
         return res.status(500).json({
             data: {},
@@ -112,7 +112,7 @@ const getAll= async(req,res)=>{
         })
         
     } catch (error) {
-
+        console.log("Error in Controller Layer");
         console.log(error);
         return res.status(500).json({
             data: {},

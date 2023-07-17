@@ -10,6 +10,7 @@ class CityRepository{
             return city;
 
         }catch(err){
+            console.log("Error in Repository Layer");
             throw {err};
         }
     }
@@ -45,7 +46,7 @@ class CityRepository{
             return result;
             
         } catch (error) {
-
+            console.log("Error in Repository Layer");
             throw {error};
             
         }
@@ -55,6 +56,7 @@ class CityRepository{
         try{const result= await City.findByPk(id);
         return result;
     }catch(error){
+        console.log("Error in Repository Layer");
         throw {error};
     }
     }
@@ -80,7 +82,7 @@ class CityRepository{
             return cities;
             
         } catch (error) {
-
+            console.log("Error in Repository Layer");
             throw {error};
             
         }

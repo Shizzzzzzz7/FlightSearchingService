@@ -9,6 +9,7 @@ class FlightRepository{
             return flight;
             
         } catch (error) {
+            console.log("Error in Repository Layer");
             throw {error}
         }
     }

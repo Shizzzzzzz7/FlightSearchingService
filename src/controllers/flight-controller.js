@@ -13,6 +13,8 @@ const createFlight= async(req,res)=>{
             error:{}
         });
     } catch (error) {
+        console.log("Error in Controller Layer");
+        console.log(error);
         return res.status(500).json({
             data:{},
             success:false,
