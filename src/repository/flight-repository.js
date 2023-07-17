@@ -25,6 +25,20 @@ class FlightRepository{
             throw {error}
         }
     }
+
+    async getAllFlight(filter){
+        try {
+
+            const flights= await Flight.findAll({
+                where: filter
+            });
+            return flights;
+            
+        } catch (error) {
+            console.log("Error in Repository Layer");
+            throw {error}
+        }
+    }
 }
 
 

@@ -50,7 +50,31 @@ const get= async(req,res)=>{
     }
 }
 
+const getAll=async(req,res)=>{
+    try {
+        
+        const flights= await flightService.getAllFlight(req.query);
+        return res.status(200).json({
+            data:flights,
+            success:true,
+            message:"Fetched flight",
+            error:{}
+        });
+
+    } catch (error) {
+        console.log("Error in Controller Layer");
+        console.log(error);
+        return res.status(500).json({
+            data:{},
+            success:false,
+            message:"Unable to fetch flights",
+            error: error
+        });
+    }
+}
+
 module.exports={
     create,
-    get
+    get,
+    getAll
 }
