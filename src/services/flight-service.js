@@ -19,9 +19,21 @@ class FlightService{
 
             const flight= await this.flightRepository.createFlight({
                 ...data, totalSeats:capacity
-            });
+             });
             return flight;
 
+        } catch (error) {
+            console.log("Error in Service Layer");
+            throw {error};
+        }
+    }
+
+    async getFlight(id){
+        try {
+            
+            const flight = this.flightRepository.getFlight(id);
+            return flight;
+            
         } catch (error) {
             console.log("Error in Service Layer");
             throw {error};

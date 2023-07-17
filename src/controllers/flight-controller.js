@@ -2,7 +2,7 @@ const {FlightService}=require("../services/index");
 
 const flightService= new FlightService();
 
-const createFlight= async(req,res)=>{
+const create= async(req,res)=>{
     try {
         
         const flight=await flightService.createFlight(req.body);
@@ -23,8 +23,34 @@ const createFlight= async(req,res)=>{
         });
         
     }
+
+    
+}
+
+const get= async(req,res)=>{
+    try {
+
+        const flight= await flightService.getFlight(req.params.id);
+        return res.status(200).json({
+            data:flight,
+            success:true,
+            message:"Fetched flight",
+            error:{}
+        });
+            
+     } catch (error) {
+        console.log("Error in Controller Layer");
+        console.log(error);
+        return res.status(500).json({
+            data:{},
+            success:false,
+            message:"Unable to fetch flight",
+            error: error
+        });
+    }
 }
 
 module.exports={
-    createFlight
+    create,
+    get
 }
